@@ -1,0 +1,34 @@
+gpu:
+- 2
+- 3
+working_dir: None
+resume_path: None
+method: nerface
+dataset:
+  name: frame_kakao
+  basedir: /data/private/Projects/dataset/dave_aux/
+  H: 512
+  W: 512
+  no_ndc: true
+  near: 4
+  far: 5.3333
+  batch_size: 1
+  val_batch_size: 1
+  data_size: 5507
+  num_workers: 4
+model:
+  num_coarse: 64
+  num_fine: 64
+  lindisp: false
+  perturb: true
+train_params:
+  num_iters: 1000000
+  lr: 0.0005
+  checkpoint_freq: 100000
+  num_random_rays: 2048
+  chunksize: 2048
+  radiance_field_noise_std: 0.1
+  t_calib: false
+val_params:
+  chunksize: 65536
+  radiance_field_noise_std: 0.0
